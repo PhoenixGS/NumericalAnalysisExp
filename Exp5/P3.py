@@ -2,9 +2,8 @@ import numpy as np
 
 def QR_algorithm(A):
     n = len(A)
-    Q = np.eye(n)
     for i in range(100):
-        Q, R = np.linalg.qr(np.dot(A, Q))
+        Q, R = np.linalg.qr(A)
         A = np.dot(R, Q)
         if i % 10 == 0:
             print('Iteration', i, 'A:\n', A)
